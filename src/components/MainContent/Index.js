@@ -1,11 +1,12 @@
 import React from 'react';
 import NewTask from '../Buttons/NewTask';
+import ContainerTasks from '../Tasks/Container';
 import { MainContentS } from './style';
 
 function MainContent() {
     return (
         <MainContentS>
-            <h1>To-Do List</h1>
+            <ContainerTasks />
             <NewTask />
         </MainContentS>
     );

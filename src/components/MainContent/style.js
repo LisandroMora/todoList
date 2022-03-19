@@ -11,7 +11,8 @@ export const MainContentS = styled.main`
     h1{
         color: #fff;
         font-size: 3rem;
-        text-align: center;
+        width: 95%;
+        margin: 30px auto;
         text-shadow: 0px 0px 10px #1c25414d;
     }
 `;

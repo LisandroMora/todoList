@@ -1,8 +1,15 @@
 import React from 'react';
+import Task from './Item';
+import { TasksContainerS } from './style';
 
 function ContainerTasks() {
     return (
-        <div></div>
+        <TasksContainerS>
+            <Task />
+            <Task />
+            <Task />
+            <Task />
+        </TasksContainerS>
     );
 }
 
