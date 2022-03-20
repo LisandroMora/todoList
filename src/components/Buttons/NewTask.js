@@ -1,9 +1,9 @@
 import React from 'react';
 import { NewTaskS } from './style';
 
-function NewTask() {
+function NewTask({ setIsFormOpen }) {
     return (
-        <NewTaskS>
+        <NewTaskS onClick={() => setIsFormOpen(true)}>
             <div className='container'>
                 <span>+</span>
                 <span>New Todo</span>
