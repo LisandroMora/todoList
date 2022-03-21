@@ -6,9 +6,8 @@ const postTask = async (task) => {
         const docRef = await addDoc(collection(db, "tasks"), {
             ...task,
         });
-        alert("Document written with ID: ", docRef.id);
     } catch (e) {
-        alert("Error adding document: ", e);
+        console.log(e);
     }
 }
 

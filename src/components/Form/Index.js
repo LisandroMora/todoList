@@ -1,4 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react';
+import Swal from 'sweetalert2';
 import TaskContext from '../../context/TaskContext';
 import postTask from '../../services/Task/POST';
 import putTask from '../../services/Task/PUT';
@@ -33,6 +34,11 @@ function Form({ isFormOpen, setIsFormOpen, }) {
                 description: '',
             });
             setIsFormOpen(false);
+            Swal.fire({
+                title: 'Success!',
+                text: 'Task saved successfully!',
+                icon: 'success',
+            })
         }
         catch (e) {
             console.log(e);

@@ -26,13 +26,13 @@ function ContainerTasks() {
                     newTasks = tasks;
                     break;
                 case 'pending':
-                    newTasks = filterTask.filter(task => !task.completed);
+                    newTasks = tasks.filter(task => !task.completed);
                     break;
                 case 'completed':
-                    newTasks = filterTask.filter(task => task.completed);
+                    newTasks = tasks.filter(task => task.completed);
                     break;
                 case 'favorites':
-                    newTasks = filterTask.filter(task => task.fav);
+                    newTasks = tasks.filter(task => task.fav);
                     break;
                 default:
                     break;
