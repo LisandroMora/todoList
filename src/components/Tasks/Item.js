@@ -19,10 +19,8 @@ function Task({ task }) {
             await updateDoc(TaskRef, {
                 completed: !isCompleted
             });
-            alert("Document written with ID: ", TaskRef.id);
         } catch (e) {
             console.log(e);
-            alert("Error adding document: ", e);
         }
     };
 
@@ -34,10 +32,8 @@ function Task({ task }) {
             await updateDoc(TaskRef, {
                 fav: !isFavorite
             });
-            alert("Document written with ID: ", TaskRef.id);
         } catch (e) {
             console.log(e);
-            alert("Error adding document: ", e);
         }
     }
 
