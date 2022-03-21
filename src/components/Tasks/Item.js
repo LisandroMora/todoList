@@ -11,7 +11,8 @@ function Task({ task }) {
     const [isFavorite, setIsFavorite] = useState(task.fav);
     const [isShowing, setIsShowing] = useState(false);
 
-    const handleComplete = async () => {
+    const handleComplete = async (e) => {
+        e.stopPropagation();
         setIsCompleted(!isCompleted);
         try {
             const TaskRef = doc(db, "tasks", task.id);
@@ -25,7 +26,8 @@ function Task({ task }) {
         }
     };
 
-    const handleFav = async () => {
+    const handleFav = async (e) => {
+        e.stopPropagation();
         setIsFavorite(!isFavorite);
         try {
             const TaskRef = doc(db, "tasks", task.id);
@@ -41,16 +43,16 @@ function Task({ task }) {
 
     return (
         <>
-            <TaskS onClick={() => setIsShowing(true)}>
+            <TaskS onClick={() => setIsShowing(true)} className={isCompleted && "task-completed"}>
                 <div className='complete'
-                    onClick={handleComplete}>
+                    onClick={(e) => handleComplete(e)}>
                     {!isCompleted ? <BsCircle /> : <BsCircleFill />}
                 </div>
                 <div className='info'>
                     <span>{task?.title}</span>
                     <div className='info__date'><BsCalendarDate /> {task?.date}</div>
                 </div>
-                <div className='fav' onClick={handleFav}>
+                <div className='fav' onClick={(e) => handleFav(e)}>
                     {!isFavorite ? <MdOutlineFavoriteBorder /> : <MdFavorite />}
                 </div>
             </TaskS>

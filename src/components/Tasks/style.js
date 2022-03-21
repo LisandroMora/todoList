@@ -37,6 +37,15 @@ export const TaskS = styled.div`
         transform: scale(1.02);
     }
 
+    &.task-completed{
+        filter: brightness(0.8);
+        .info{
+            span{
+                text-decoration: line-through;
+            }
+        }
+    }
+
 `;
 
 export const TasksContainerS = styled.div`
