@@ -8,11 +8,4 @@ export const MainContentS = styled.main`
     background-repeat: no-repeat;
     width: 100%;
     height: 100%;
-    h1{
-        color: #fff;
-        font-size: 3rem;
-        width: 95%;
-        margin: 30px auto;
-        text-shadow: 0px 0px 10px #1c25414d;
-    }
 `;

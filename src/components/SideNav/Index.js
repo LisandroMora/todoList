@@ -1,7 +1,12 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import FilterContext from '../../context/FilterContext';
 import { SideNavS } from './style';
 
 function SideNav() {
+    const { setFilter } = useContext(FilterContext);
+    const handleFilter = (e) => {
+        setFilter(e.target.dataset.filter);
+    }
     return (
         <SideNavS>
             <div>
@@ -9,10 +14,10 @@ function SideNav() {
                 <h1>Todo List</h1>
             </div>
             <div className='buttons-container'>
-                <button>All</button>
-                <button>Pending</button>
-                <button>Completed</button>
-                <button>Favorites</button>
+                <button data-filter="all" onClick={handleFilter}>All</button>
+                <button data-filter="pending" onClick={handleFilter}>Pending</button>
+                <button data-filter="completed" onClick={handleFilter}>Completed</button>
+                <button data-filter="favorites" onClick={handleFilter}>Favorites</button>
             </div>
         </SideNavS>
     );
